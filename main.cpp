@@ -12,6 +12,7 @@ int main(){
 
     int sizeV,sizeH;
     string img_name, Classification;
+    string nameOutput = "perimeter.bmp";
 
     /* Import image's information */
     readImgData(img_name);
@@ -32,7 +33,7 @@ int main(){
     /*get data from image as area and perimeter*/
     int perimeter, area;
     std::tie(area, perimeter) = getData(matRGB);
-    exportImg(matRGB, buffer, sizeF);
+    exportImg(matRGB, buffer, sizeF, nameOutput);
     cout<<mspace<<"Parameters of the image: "<<endl;
     cout<<"Area: "<<area<<endl;
     cout<<"Perimeter: "<<perimeter<<endl;

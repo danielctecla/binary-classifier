@@ -132,7 +132,7 @@ void revomeBackground(vector<vector<bitRGB>> &matRGB, vector<cluster> &centroids
     cout<<"Image without background exported"<<endl;
 }
 
-void exportImg(vector<vector<bitRGB>> &matrixRGB, vector<char> &buff, std::streampos &sizeF){
+void exportImg(vector<vector<bitRGB>> &matrixRGB, vector<char> &buff, std::streampos &sizeF,string &OutputName){
     int pointer = 54;
     char* new_image = new char[sizeF];
     for(int i = 0; i < pointer ; i++) new_image[i] = buff[i];
@@ -145,7 +145,7 @@ void exportImg(vector<vector<bitRGB>> &matrixRGB, vector<char> &buff, std::strea
         }
     }
     
-    std::ofstream outputFile("perimeter.bmp", std::ios::binary);
+    std::ofstream outputFile(OutputName, std::ios::binary);
     outputFile.write(new_image, sizeF);
     outputFile.close();
 
